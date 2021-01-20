@@ -1,0 +1,18 @@
+
+#Configuração Global do Git no terminal
+git config --global user.email "email@gmail.com"
+git config --global user.name  "nome"
+
+#Comandos do Git
+01 - Clonar um projeto
+git clone https://github.com/everaldobass/portfolio.git
+
+02 - Adicionar no Git
+git add .
+
+03 - commitar no Git
+ git commit -m "Nome do Comit "
+
+04 - Push no Git
+git push
+

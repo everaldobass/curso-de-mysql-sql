@@ -1,0 +1,58 @@
+### Relacionamento de Tabelas com INNER JOIN - Curso de SQL - Aula 6
+- Join no SQL
+- Chave primária
+- Tabela Fato VS Tabela Dimensão
+- Inner Join
+
+
+#### Uma Chave Primária:
+- É uma coluna que identifica as informações distintas em uma tabela. Geralmente é uma coluna de ID. Toda tabela terá uma, e somente uma, chave primária. Essa chave é utilizada como identificador único da tabela, sendo representada por uma coluna que não receberá valores repetidos.
+
+#### Chave Estrangeira
+- Já uma Chave Estrangeira é uma coluna que permite relacionar as linhas de uma segunda tabela com a Chave Primária de uma primeira tabela.
+
+#### Tabela Dimensão
+- Uma Tabela Dimensão é uma tabela que contém características
+de um determinado elemento: lojas, produtos, funcionários,
+clientes, etc.
+
+#### Tabela Fato
+- Já uma Tabela Fato é uma tabela que vai registrar os fatos ou
+acontecimentos de uma empresa/negócio em determinados
+períodos de tempo (vendas, devoluções, aberturas de
+chamados, receitas, despesas, etc).
+
+
+### JOIN
+- INNER JOIN
+
+```
+SELECT
+Tabela_A.coluna1,
+Tabela_A.coluna2,
+Tabela_A.coluna3,
+Tabela_A.coluna4
+FROM
+Tabela_A
+INNER JOIN Tabela_B
+ON Tabela_A.Id_Chave_estrangeira = Tabela_B.id_chave_primaria
+
+```
+
+#### Inner join
+- Tabela A -> Fatos tabela de pedidos
+- Tabela B -> Dimensão tabela de lojas
+
+```
+SELECT
+  pedidos.*,
+  lojas.Loja,
+  lojas.Gerente,
+  lojas.Telefone
+  FROM pedidos
+  INNER JOIN lojas
+  ON pedidos.ID.Loja = lojas.ID_loja;
+
+```
+
+

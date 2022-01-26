@@ -1,0 +1,98 @@
+## SGBD - Linguagem SQL
+
+## 1.4 - Comandos DDL
+- Linguagem de Definição de Dados
+
+### 1.4.1 - Criate Database
+- Objetivo: Criar um banco de dados
+
+- Sintaxe
+CREATE DATABASE banco
+
+### 1.4.2 - Use - Seleciona o banco de dados
+USE banco
+
+### 1.4.3 - Drop Database
+- Objetivo: Deletar banco de dados
+
+- Sintaxe
+DROP DATABASE banco
+
+### 1.4.4 - Create Table
+- Objetivo: Criar a estrutura de uma tabela, definindo todos os campos.
+
+- nome-tabela: representa o nome da tabela
+- nome-coluna: representa o nome da coluna
+- tipo-do-dado: define o tipo e o tamanho dos campos
+- NULL: não exige o preenchimento do campo, no momento da inclusão
+- NOT NULL: exige o preenchimento do campo, no momento da inclusão
+- UNIQUE: não permite valores duplicados
+- PRIMARY KEY: define no banco a chave primária
+
+- Sintaxe
+
+CREATE TABLE funcionario(
+
+idFuncionario INT NOT NULL PRIMARY KEY,
+
+nome VARCHAR (50) NULL,
+endereco VARCHAR (100) NULL,
+cidade VARCHAR (50) NULL,
+estado CHAR(2) NULL,
+email VARCHAR(50) NULL,
+datanasto DATE NULL
+
+)
+
+
+CREATE TABLE livro(
+idLivro INT,
+titulo VARCHAR (100)
+PRIMARY KEY(idLivro)
+
+)
+
+
+### 1.4.5 - Alter Table
+- Objetivo: Alterar a estrutura de uma tabela, acrescenta as colunas salário e cargos
+
+- Sintaxe
+UNIQUE: Não pertime a criação do indece
+nome-indice: representa o nome da estrutura de indece que será criada
+nome-tabela:representa o nome da tabela que contém a coluna na qual será criada
+nome-coluna: representa o nome da coluna que será criada
+ASC | DESC: representa a criação do indice ordenado de forma crescente(ADC) ou decrescente (DESC)
+
+Exemplos:
+
+ALTER TABLE Funcionario ADD
+salario DECIMAL (7, 2) NULL,
+cargos VARCHAR(2) NULL
+
+- Objetivo: Apaga a coluna cargos
+
+ALTER TABLE Funcionario
+DROP COLUMN cargos
+
+- Objetivo: Acrescenta as colunas cargo e ativo
+
+ALTER TABLE Funcionario ADD
+cargo VARCHAR (2) NULL,
+ativo BIT
+
+### 1.4.6 - DROP TABLE
+-- Objetivo: Deletar a tabela e os dados existentes em uma tabela
+DROP TABLE funcionario
+
+
+### 2.1 - Comando DML
+
+
+
+
+
+
+
+
+
+

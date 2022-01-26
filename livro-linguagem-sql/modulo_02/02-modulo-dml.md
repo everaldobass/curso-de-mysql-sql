@@ -1,0 +1,103 @@
+## SGBD - Linguagem SQL.
+## Comandos - DML
+
+### 2.1 - Insert
+- objetivo: Incluir um novo registro em uma tabela do banco de dados
+- nome-tabela: representa o nome da tabela na qual será incluido o registro
+- nome-coluna: representa o nome das colunas que terá conteúdo no momento da operação
+
+- Exemplos:
+### Inserindo conteúdo na tabela funcionário
+
+INSERT INTO funcionario
+(idFuncionario, nome, endereco, cidade, estado, email, datanasc)
+VALUES
+(1, 'Everaldo', 'Rua da paz', 'Jundiai', 'SP', 'everaldo@gmail.com', '1981-10-04')
+
+### Inserir vários registros de uma vez
+
+INSERT INTO funcionario
+(idFuncionario, nome, endereco, cidade, estado, email, datanasc)
+VALUES
+(2, 'Elias', 'Rua de Jesus', 'Caruaru', 'PE', 'elias@gmail.com', '2000-08-29'),
+(3, 'Maria', 'Rua da Alegria', 'Caruaru', 'PE', 'maria@gmail.com', '1959-07-24'),
+(4, 'José', 'Rua da Esperança', 'São Caetano', 'PE', 'jose@gmail.com', '1953-08-29')
+
+
+#### 2.2 UPDATE
+- Objetivo: Atualiza os dados de uma ou um grupo de registros em uma tabela do banco de dados
+
+- nome-tabe: representa o nome da tabela que o conteúdo será alterado
+- nome-coluna: representa o nome da coluna que será alterada
+- condição: representa a condição ra a seleção dos registros que serão atualizados.
+
+Exemplo:
+
+#### 2.2 UPDATE - Altera todas as cidades para Jundiai
+
+UPDATE funcionario SET
+cidade = 'Jundiai'
+
+#### UPDATE - Altera a Cidade de Caruaru para Valinhos
+
+UPDATE funcionario SET
+cidade = 'Valinhos'
+WHERE cidade = 'Caruaru'
+
+### 2.3 Delete
+- Deleta todos os funcionários
+
+
+DELETE FROM funcionarios;
+
+### 2.4 Select
+- Objetivo: Selecionar um conjunto de registros em uma ou mais tabelas que atenda a uma determinada condição definida pelo usuário
+
+- nome-tabela: representa o nome da tabela que contem as colunas que serão selecionadas
+- condição: representa a condição para a seleção dos registros
+- nome-coluna: representa o nome da coluna que os resultados serão agrupados
+
+- ALL: argumento defalt. Mostra todos os valores obtidos
+- DISTINCT: argumento que mostra os valores obtidos
+- WHERE: especifica a condição ou critério de seleção dos registros
+- GROUP BY: especifica os campos que serão agrupados para atender a consulta
+- HAVING: especifica uma condição para seleção de um grupo de dados
+- ORDER BY esse argumento quando utilizado ordema o a forma crescente - ASC, ou decrescente DESC
+
+#### 2.4 SELECT
+-- Exibe todos os funcionários
+SELECT *
+FROM Funcionarios
+
+#### Exibe todos os dados dos funcioários ordenados por nome
+SELECT *
+FROM Funcionarios
+ORDER BY nome
+
+####  Exibe somente os nome dos funcionários em ordem decrescente
+SELECT nome
+FROM Funcionarios
+ORDER BY nome DESC
+
+#### Exibe somente o nome e o e-mail dos funcionários da cidade de Valinhos
+SELECT nome, email
+FROM Funcionarios
+WHERE cidade = 'Caruaru'
+
+#### Exibe somente o estado dos Funcionários
+SELECT estado, cidade
+FROM Funcionarios
+
+#### Exibe somente o estado dos funcionários, sem repetir estados iguais
+SELECT DISTINCT estado
+FROM Funcionarios 
+
+
+
+
+
+
+ 
+ 
+
+

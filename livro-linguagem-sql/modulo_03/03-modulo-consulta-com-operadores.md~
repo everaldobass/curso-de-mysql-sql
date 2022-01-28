@@ -1,0 +1,19 @@
+### Consulta com Operadores
+
+### 3.1 - Operadores Aritméticos
+- Objetivos: Responsáveis pelas operações e cálculos matemáticos simples
+
+- Operador | Operação matemática
+-   +              Adição
+-   -              Subtração
+-   *              Multiplicação
+-   /              Divisão
+-   %              Módulo
+
+- Exemplos
+
+SELECT * FROM Funcionarios
+
+ALTER TABLE Funcionarios ADD
+cargo VARCHAR (2) NULL
+
